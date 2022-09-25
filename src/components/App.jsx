@@ -4,7 +4,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [inpuText, setInpuText] = useState("");
 
-  function handleChenge(event) {
+  function handleChange(event) {
     const newValue = event.target.value;
 
     setInpuText(newValue);
@@ -14,7 +14,7 @@ function App() {
     setInpuText("");
   };
 
-  function handleDel(event) {
+  function handleRemove(event) {
     return event.target.remove();
   }
 
@@ -25,7 +25,7 @@ function App() {
       </div>
       <div className="form">
         <input
-          onChange={handleChenge}
+          onChange={handleChange}
           type="text"
           name="item"
           value={inpuText}
@@ -37,7 +37,7 @@ function App() {
       <div>
         <ul>
           {items.map((item) => (
-            <li key={item} onClick={handleDel}>
+            <li key={item} onClick={handleRemove}>
               {item}
             </li>
           ))}
